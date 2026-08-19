@@ -92,13 +92,11 @@ public:
 
         for (auto node : m_p1Nodes) {
             m_container->addChild(node);
-            m_p1Nodes.push_back(node);
             node->setCallback([self = Ref(this)](const Config& config) { auto current = self->getValue(); current.p1Config = config; self->setValue(current, nullptr); });
         }
 
         for (auto node : m_p2Nodes) {
             m_container->addChild(node);
-            m_p2Nodes.push_back(node);
             node->setCallback([self = Ref(this)](const Config& config) { auto current = self->getValue(); current.p2Config = config; self->setValue(current, nullptr); });
         }
 

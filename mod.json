@@ -8,7 +8,7 @@
 	},
 	"id": "lc3i.custom_wave_trail",
 	"name": "Custom Wave Trail",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "lc3i",
 	"description": "customize ur wave trail freely",
 	"dependencies": {
