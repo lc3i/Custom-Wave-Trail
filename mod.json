@@ -1,0 +1,180 @@
+{
+	"geode": "5.7.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "lc3i.custom_wave_trail",
+	"name": "Custom Wave Trail",
+	"version": "v1.0.0",
+	"developer": "lc3i",
+	"description": "customize ur wave trail freely",
+	"dependencies": {
+		"geode.node-ids": ">=1.23.3"
+	},
+	"tags": [
+		"gameplay", "offline", "enhancement", "utility", "customization"
+	],
+	"links": {
+		"source": "https://github.com/lc3i/Custom-Wave-Trail"
+	},
+	"settings": {
+		"wave-color-title": {
+			"name": "Player Wave Trail Color",
+			"type": "title",
+			"description": "Color override for the Wave Trail."
+		},
+		"wave-color": {
+			"type": "custom:wave-color",
+			"name": "",
+			"default": ""
+		},
+		"separate-wave-color": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"wave-rgb-title": {
+			"name": "Player Wave Trail RGB",
+			"type": "title",
+			"description": "Wave Trail RGB Cycle. Will override custom Wave Trail Color."
+		},
+		"wave-rgb": {
+			"type": "custom:wave-rgb",
+			"name": "",
+			"default": ""
+		},
+		"separate-wave-rgb": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"solid-wave-trail-title": {
+			"name": "Solid Player Wave Trail",
+			"type": "title",
+			"description": "Makes the Wave Trail a solid color instead of it blending with the background and being glowy."
+		},
+		"solid-wave-trail": {
+			"type": "custom:solid-wave-trail",
+			"name": "",
+			"default": ""
+		},
+		"separate-solid-wave-trail": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"wave-trail-size-title": {
+			"name": "Player Wave Trail Size",
+			"type": "title",
+			"description": "The size multiplier the Wave Trail will have."
+		},
+		"wave-trail-size": {
+			"type": "custom:wave-trail-size",
+			"name": "",
+			"default": ""
+		},
+		"separate-wave-trail-size": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"wave-pulse-size-title": {
+			"name": "Player Wave Trail Pulse Size",
+			"type": "title",
+			"description": "The pulse size multiplier the Wave Trail will have."
+		},
+		"wave-pulse-size": {
+			"type": "custom:wave-pulse-size",
+			"name": "",
+			"default": ""
+		},
+		"separate-wave-pulse-size": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"no-wave-pulse-title": {
+			"name": "No Player Wave Pulse",
+			"type": "title",
+			"description": "Disable Wave Trail pulsing to the song."
+		},
+		"no-wave-pulse": {
+			"type": "custom:no-wave-pulse",
+			"name": "",
+			"default": ""
+		},
+		"separate-no-wave-pulse": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"no-wave-trail-title": {
+			"name": "No Player Wave Trail",
+			"type": "title",
+			"description": "Disable the Wave Trail."
+		},
+		"no-wave-trail": {
+			"type": "custom:no-wave-trail",
+			"name": "",
+			"default": ""
+		},
+		"separate-no-wave-trail": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"keep-trail-on-death-title": {
+			"name": "Keep Player Wave Trail On Death",
+			"type": "title",
+			"description": "Prevents the Wave Trail from fading out on death."
+		},
+		"keep-trail-on-death": {
+			"type": "custom:keep-trail-on-death",
+			"name": "",
+			"default": ""
+		},
+		"separate-keep-trail-on-death": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"no-trail-behind-title": {
+			"name": "No Player Regular Trail Behind",
+			"type": "title",
+			"description": "Hides the regular trail while in the Wave gamemode."
+		},
+		"no-trail-behind": {
+			"type": "custom:no-trail-behind",
+			"name": "",
+			"default": ""
+		},
+		"separate-no-trail-behind": {
+			"name": "Separate",
+			"type": "bool",
+			"default": false
+		},
+		"settings-menu-title": {
+			"name": "Settings Menu",
+			"type": "title"
+		},
+		"button-in-pause-menu": {
+			"name": "Button in Pause Menu",
+			"type": "bool",
+			"default": true,
+			"description": "Whether or not to show the Wave Trail settings button in the pause menu."
+		},
+		"open-menu": {
+			"name": "Open Settings Keybind",
+			"type": "keybind",
+			"description": "The keybind that will be used to open this menu.",
+			"default": "",
+			"platforms": [
+				"win",
+				"mac"
+			]
+		}
+	}
+}
