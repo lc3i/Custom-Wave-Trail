@@ -29,6 +29,10 @@ void updateEnabledHooks() {
     for (const auto& [hook, enabled] : hooks) {
         setHookEnabled(hook, enabled);
     }
+
+    if (getSettingFast<"wave-color", WaveColor>() && Loader::get()->isModLoaded("absolllute.megahack")) {
+        setHookEnabled("PlayerObject::update", true);
+    }
 }
 
 $on_mod(Loaded) {

@@ -1,5 +1,6 @@
 #include "PauseLayer.hpp"
 
+#include "settings/WaveColor.hpp"
 #include "settings/WaveRGB.hpp"
 #include "settings/WaveTrailSize.hpp"
 #include "settings/NoWavePulse.hpp"
@@ -17,11 +18,13 @@ void ProPauseLayer::applyTrailSettings() {
         return;
     }
 
-    f->backTrail->setColor(pl->m_player1->m_waveTrail->getColor());
+    const auto& colorConfig = getSettingFast<"wave-color", WaveColor>().get(true);
+    f->backTrail->setColor(colorConfig.enabled ? colorConfig.color : pl->m_player1->m_waveTrail->getColor());
+
     f->backTrail->setContentWidth(getSettingFast<"wave-trail-size", WaveTrailSize>().get(true).size * 3.5f);
     f->frontTrail->setContentWidth(getSettingFast<"wave-trail-size", WaveTrailSize>().get(true).size * 1.47f);
-    f->frontTrail->setVisible(!getSettingFast<"solid-wave-trail", SolidWaveTrail>().get(true) && !getSettingFast<"no-wave-trail", NoWaveTrail>());
-    f->backTrail->setBlendFunc(getSettingFast<"solid-wave-trail", SolidWaveTrail>().get(true) ? ccBlendFunc{GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA} : ccBlendFunc{GL_SRC_ALPHA, GL_ONE});
+    f->frontTrail->setVisible(!getSettingFast<"solid-wave-trail", SolidWaveTrail>().get(true) && f->backTrail->getColor() != ccColor3B{0, 0, 0} && !getSettingFast<"no-wave-trail", NoWaveTrail>());
+    f->backTrail->setBlendFunc(getSettingFast<"solid-wave-trail", SolidWaveTrail>().get(true) || f->backTrail->getColor() == ccColor3B{0, 0, 0} ? ccBlendFunc{GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA} : ccBlendFunc{GL_SRC_ALPHA, GL_ONE});
     f->backTrail->setVisible(!getSettingFast<"no-wave-trail", NoWaveTrail>());
 }
 

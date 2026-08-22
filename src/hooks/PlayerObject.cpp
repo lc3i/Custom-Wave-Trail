@@ -45,6 +45,8 @@ void ProPlayerObject::applyTrailColor() {
             m_waveTrail->setColor(f->originalColor);
         }
 
+        this->applySolidWaveTrail();
+
         return;
     }
 
@@ -54,6 +56,8 @@ void ProPlayerObject::applyTrailColor() {
     }
 
     m_waveTrail->setColor(config.color);
+
+    this->applySolidWaveTrail();
 }
 
 void ProPlayerObject::applyTrailRGB() {
@@ -104,7 +108,7 @@ void ProPlayerObject::applySolidWaveTrail() {
         return;
     }
 
-    auto enabled = getSettingFast<"solid-wave-trail", SolidWaveTrail>().get(this->isPlayer1());
+    auto enabled = getSettingFast<"solid-wave-trail", SolidWaveTrail>().get(this->isPlayer1()) || m_waveTrail->getColor() == ccColor3B{0, 0, 0};
 
     m_waveTrail->setBlendFunc(enabled ? ccBlendFunc{GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA} : ccBlendFunc{GL_SRC_ALPHA, GL_ONE});
     m_waveTrail->m_isSolid = enabled;
@@ -214,6 +218,7 @@ void ProPlayerObject::updateTrailRGB(float dt) {
 
 void ProPlayerObject::update(float dt) {
     PlayerObject::update(dt);
+    this->applyTrailColor();
     this->applyWavePulseSize();
     this->applyNoWavePulse();
 }
