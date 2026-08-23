@@ -1,3 +1,7 @@
+# v1.0.3
+
+* fixed megahack trail color incompatibility 2
+
 # v1.0.2
 
 * fixed megahack trail color incompatibility

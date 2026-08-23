@@ -221,6 +221,7 @@ void ProPlayerObject::update(float dt) {
     this->applyTrailColor();
     this->applyWavePulseSize();
     this->applyNoWavePulse();
+    this->applyNoTrailBehind();
 }
 
 void ProPlayerObject::updateStreakBlend(bool p0) {

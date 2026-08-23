@@ -11,5 +11,6 @@ class $modify(ProPlayLayer, PlayLayer) {
     $override
     void setupHasCompleted();
     void resetLevel();
+    void destroyPlayer(PlayerObject*, GameObject*);
 
 };

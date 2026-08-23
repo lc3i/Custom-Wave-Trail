@@ -30,8 +30,14 @@ void updateEnabledHooks() {
         setHookEnabled(hook, enabled);
     }
 
-    if (getSettingFast<"wave-color", WaveColor>() && Loader::get()->isModLoaded("absolllute.megahack")) {
+    if (
+        (getSettingFast<"wave-color", WaveColor>() || getSettingFast<"no-trail-behind", NoTrailBehind>())
+        && Loader::get()->isModLoaded("absolllute.megahack")
+    ) {
         setHookEnabled("PlayerObject::update", true);
+        setHookEnabled("PlayerObject::destroyPlayer", true);
+    } else {
+        setHookEnabled("PlayerObject::destroyPlayer", false);
     }
 }
 

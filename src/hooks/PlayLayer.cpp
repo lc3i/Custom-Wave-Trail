@@ -15,3 +15,8 @@ void ProPlayLayer::resetLevel() {
     PlayLayer::resetLevel();
     this->applyPlayerSettings(true);
 }
+
+void ProPlayLayer::destroyPlayer(PlayerObject* p0, GameObject* p1) {
+    PlayLayer::destroyPlayer(p0, p1);
+    this->applyPlayerSettings();
+}
