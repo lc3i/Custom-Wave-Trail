@@ -124,7 +124,7 @@ void ProPauseLayer::customSetup() {
         return;
     }
 
-    auto menu = this->getChildByID("left-button-menu");
+    auto menu = m_layer->getChildByID("left-button-menu");
 
     if (!menu) {
         return;
@@ -136,6 +136,7 @@ void ProPauseLayer::customSetup() {
     auto btn = Button::createWithNode(spr, [](Button*) {
         toggleSettingsPopup();
     });
+    btn->setScale(0.8385f);
     btn->setID("button"_spr);
 
     menu->addChild(btn);
