@@ -1,3 +1,7 @@
+# v1.0.4
+
+* Updated to gode v6
+
 # v1.0.3
 
 * fixed megahack trail color incompatibility 2

@@ -125,7 +125,8 @@ void WavePulseSizeSettingNode::setEnabled(bool enabled) {
     m_label->setOpacity(enabled ? 185 : 80);
     m_input->setEnabled(enabled);
     m_input->getBGSprite()->setOpacity(enabled ? 90 : 45);
-    m_input->getInputNode()->getTextLabel()->setOpacity(enabled ? 255 : 110);
+    m_input->getContentLabel()->setOpacity(enabled ? 255 : 110);
+    m_input->getPlaceholderLabel()->setOpacity(enabled ? 255 : 110);
     m_slider->setReadOnly(!enabled);
     m_slider->setOpacity(enabled ? 255 : 90);
 }
