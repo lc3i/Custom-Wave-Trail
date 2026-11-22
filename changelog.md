@@ -1,3 +1,7 @@
+# v1.0.5
+
+* made pause menu button smaller to fit the other ones
+
 # v1.0.4
 
 * Updated to gode v6

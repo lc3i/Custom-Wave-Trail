@@ -41,7 +41,7 @@ jobs:
         uses: geode-sdk/build-geode-mod@main
         with:
           sdk: nightly
-          bindings: Zilko/bindings
+          bindings: geode-sdk/bindings
           build-config: ${{ matrix.config.build-type || 'Release' }}
           export-pdb: true
           bindings-ref: main

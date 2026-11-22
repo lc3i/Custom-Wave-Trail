@@ -131,12 +131,11 @@ void ProPauseLayer::customSetup() {
     }
 
     auto spr = CircleButtonSprite::create(CCNode::create(), CircleBaseColor::Gray, CircleBaseSize::Medium);
-    spr->setScale(0.7f);
+    spr->setScale(0.7f * 0.8385f);
     
     auto btn = Button::createWithNode(spr, [](Button*) {
         toggleSettingsPopup();
     });
-    btn->setScale(0.8385f);
     btn->setID("button"_spr);
 
     menu->addChild(btn);
